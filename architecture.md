@@ -28,12 +28,12 @@ There are a few obvious correlations, like `batting_avg` being strongly correlat
 
 With this trend, I want to create a model that recognizes the trends in this data. Bare boned linear regression seems as if it wouldn't be useful for what I am looking to do. The data suggests a non-linear relationship, as there seems to be an increase in `WAR` with `player_age` until near 30, when it then begins to decline.
 
-So here we go, looking at Chapter 19 in the R&N textbook, 19.7.4 talks about "piecewise-linear nonparametric regression". In particular, what catches my eye is locally-weighted regression. After perusing `sklearn`, I couldn't find anything on this, but I stumbled upon `PolynomialFeatures`, which seemed applicable to this data set. 
+So here we go, looking at Chapter 19 in the R&N textbook, 19.7.4 talks about "piecewise-linear nonparametric regression". In particular, what catches my eye is locally-weighted regression. After perusing `sklearn`, I couldn't find anything on this, but I stumbled upon `PolynomialFeatures`, which seemed applicable to this data set. The relationship suggests some sort of uptick until a certain age, until then it goes down, so a 2nd degree polynomial is something that could make sense. 
 
-So I split up my data %80 training, %20 testing like so: 
+So I split up my data 80% training, 20% testing like so: 
 `X = stats['player_age'] \n`,
-'X = np.array(X).reshape(-1,1)', and
-'Y = stats['WAR']`
+`X = np.array(X).reshape(-1,1)`, and
+`Y = stats['WAR']`
 
 and then split it: `X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)`
 
@@ -41,4 +41,4 @@ after fitting the model to the training data and then testing it, I was able to 
 
 ![MODELED_playerAge_WAR](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/705ae5bf-2dd0-4676-a896-a996d08a318d)
 
-This is a great start, as it captures the tail off in the end of player's careers. However, the testing doesn't quite capture the initial uptick in player performance at the start of the careers. Thus, I believe it would be wise to look for another technique to try to quantify this trend.
+This is a great start, as it captures the tail off in the end of player's careers. However, the testing doesn't quite capture the initial uptick in player performance at the start of the careers. Thus, I believe it would be wise to look for another technique to try to quantify this trend, or modify the current one in some way.
