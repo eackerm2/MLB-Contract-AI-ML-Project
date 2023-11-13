@@ -42,3 +42,12 @@ after fitting the model to the training data and then testing it, I was able to 
 ![MODELED_playerAge_WAR](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/705ae5bf-2dd0-4676-a896-a996d08a318d)
 
 This is a great start, as it captures the tail off in the end of player's careers. However, the testing doesn't quite capture the initial uptick in player performance at the start of the careers. Thus, I believe it would be wise to look for another technique to try to quantify this trend, or modify the current one in some way.
+
+## Further Exploration of Techniques
+
+Not deterred from the mediocre results to this point, I kept digging deeper into Scikit-Learn, trying to find a good way to work with my data. After some time, I stumbled upon the `Pipeline` tool which helps streamline the data transformation process to allow for polynomial regression. Playing around with it, I was able to obtain graphs that looked the part finally.
+
+![Graph](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/d78b279d-b412-4c54-b38e-5b8ba071e70c)
+
+Still, a couple things to note, because of the test train split, our testing set will omit players at the ends of the age gap. There just simply aren't enough points for 38+ year olds and 20- year olds to guarantee they'll be in the testing set. So, as I move forward with the contract predictor, it is key to remember that this regression won't cover really old players or really young players accurately.
+
