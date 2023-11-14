@@ -51,3 +51,30 @@ Not deterred from the mediocre results to this point, I kept digging deeper into
 
 Still, a couple things to note, because of the test train split, our testing set will omit players at the ends of the age gap. There just simply aren't enough points for 38+ year olds and 20- year olds to guarantee they'll be in the testing set. So, as I move forward with the contract predictor, it is key to remember that this regression won't cover really old players or really young players accurately.
 
+## Contract Evaluation
+
+Now that there is a tangible model with sensible results, it is feasible to start the contract evaluation. First, I want to calculate the average salary among qualified batters as a baseline of what players are being paid. At the same time I want to calculate the average WAR for a player that is a qualified batter. These come out to around `$9.5 M` for the average salary (adjusted for inflation) and `3.05` average WAR among qualified batters from 2015-2022. This paints the picture that teams are paying around `$3.1 M` per Win Above Replacement.
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/5847e1fe-2dd0-488f-aa82-90d71173c006)
+
+With this readily available, my vision is to take players' WAR from last season, and apply the relationship found by the regression model to predict their WAR in future seasons. With their predicted WAR, I can then take the $/WAR ratio, and apply it to the player's future production. Thus, the contract would be made.
+
+First, I made a cell block that get's the `playerFirst` and `playerLast` names from the user. With this I was able to obtain `PWAR` which is the player's WAR from the 2022 season, along with their `AGE`.
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/0d95292d-a10e-461a-b25e-db4b77950bcc)
+
+Next, I made a cell block such that I enter how many years into the future I am going to look. I then take the regression relationships found earlier, and apply them to each of the future seasons. So from that `AGE` season, I can see the percent changes.
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/3841972c-d51b-48d9-b277-f609b33fb2c8)
+
+The percentages will now be applied to the `PWAR` found earlier, and store all of the predicted WARS in the `playerPrediction` list. 
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/5a003fd0-c54f-4be2-add5-824a4cbfe531)
+
+Finally, I can apply the `$3.1 M` per WAR to the predicted WAR's to see a valid contract put together.
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/51abe9da-4c3b-441d-987b-12ea018c7fd7)
+
+
+
+
