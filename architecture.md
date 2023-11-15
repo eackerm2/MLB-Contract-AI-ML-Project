@@ -71,9 +71,11 @@ The percentages will now be applied to the `PWAR` found earlier, and store all o
 
 ![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/5a003fd0-c54f-4be2-add5-824a4cbfe531)
 
-Finally, I can apply the `$3.1 M` per WAR to the predicted WAR's to see a valid contract put together.
+Finally, I can apply the `$3.1 M` per WAR to the predicted WAR's to see a valid contract put together. I will get the AAV (Average Annual Value) breakdown for what the player's value should be in each of their future aged seasons.
 
 ![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/51abe9da-4c3b-441d-987b-12ea018c7fd7)
+
+This walkthrough can now be applied to any player with data from the 2022 season! I used Trea Turner as my example, but the mechanics behind it all are the same. The code for the cells described can be found in `offensive-predictor.ipynb`. As I move forward, I am now going to look for ways to fine tune the regression techniques, and research other factors that could be implemented when creating these contracts.
 
 
 
