@@ -84,6 +84,16 @@ I began to investigate the relationship that I found using WAR, and decided to s
 
 ![download](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/973ce94d-6a1d-4053-95ac-77e845daa787)
 
+Some of these predicted contracts are super close to what player's just signed for...
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/6a08969c-26d8-4a37-b30d-ef4fc14907a1)
+
+Others, seem to be off by quite a margin...
+
+![image](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/aa8616b0-bf79-49bf-8040-cfaf752d3746)
+
+
+
 
 
 
