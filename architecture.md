@@ -77,6 +77,14 @@ Finally, I can apply the `$3.1 M` per WAR to the predicted WAR's to see a valid 
 
 This walkthrough can now be applied to any player with data from the 2022 season! I used Trea Turner as my example, but the mechanics behind it all are the same. The code for the cells described can be found in `offensive-predictor.ipynb`. As I move forward, I am now going to look for ways to fine tune the regression techniques, and research other factors that could be implemented when creating these contracts.
 
+## Tuning the Model and Researching Contracts
+If I already previously haven't explained WAR, I want to reiterate that it is a singular stat that tries to quantify a player's value, but is not necessarily a perfectly precise indicator of player's contribution. So when I run my contract predictor as I constructed it above, it provides a baseline of what player's should be paid, when in reality looking at contracts that were signed this past offseason, players were getting more money. Although contracts are a negotiation in most cases, so I am going to try to find something to help take the contract evaluator to the next level.
+
+I began to investigate the relationship that I found using WAR, and decided to see how WAR is calculated. I got my WAR values from Baseball Reference, but FanGraphs actually calculates their stat `fWAR` slightly differently. Interestingly, when I use the `fWAR` value from FanGraphs with the `WAR` relationship found by my model, the contracts are actually very close to what player's signed for this past offseason! The results are actually quite impressive in my opinion. Below I will show some of the contracts with my predicted contract from running it through the predictor, vs what they actually signed for:
+
+![download](https://github.com/eackerm2/MLB-Contract-AI-ML-Project/assets/122949257/973ce94d-6a1d-4053-95ac-77e845daa787)
+
+
 
 
 
